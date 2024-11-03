@@ -11,20 +11,25 @@ import com.pdfgenerator.pdfgenerator.service.PdfGeneratorService;
 
 @RestController
 @RequestMapping("/api/pdf")
-public class InvoiceController {
-
+public class InvoiceController
+    {
     private final PdfGeneratorService pdfGeneratorService;
 
-    // Constructor for dependency injection
-    public InvoiceController(PdfGeneratorService pdfGeneratorService) {
+   
+    public InvoiceController(PdfGeneratorService pdfGeneratorService)
+        {
         this.pdfGeneratorService = pdfGeneratorService;
     }
 
     @PostMapping("/generate")
-    public String generatePdf(@RequestBody Map<String, Object> data) {
-        try {
+    public String generatePdf(@RequestBody Map<String, Object> data)
+        {
+        try
+            {
             return pdfGeneratorService.generatePdf(data);
-        } catch (Exception e) {
+        } 
+        catch (Exception e)
+            {
             return "Error generating PDF: " + e.getMessage();
         }
     }
