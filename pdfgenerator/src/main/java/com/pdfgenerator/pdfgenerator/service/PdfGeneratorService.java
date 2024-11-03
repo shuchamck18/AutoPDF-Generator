@@ -34,7 +34,7 @@ public class PdfGeneratorService
         File invoiceDir = new File(desktopPath);
         if (!invoiceDir.exists()) 
         {
-            invoiceDir.mkdirs(); // Create the directory if it doesn't exist
+            invoiceDir.mkdirs(); 
         }
 
         
@@ -71,7 +71,7 @@ public class PdfGeneratorService
         document.add(new Paragraph("Items").setBold().setFontSize(16).setMarginTop(20));
 
         
-        Table itemsTable = new Table(4); // Assuming you want 4 columns: Item Name, Quantity, Rate, Amount
+        Table itemsTable = new Table(4);
         itemsTable.addCell(new Cell().add(new Paragraph("Item Name")));
         itemsTable.addCell(new Cell().add(new Paragraph("Quantity")));
         itemsTable.addCell(new Cell().add(new Paragraph("Rate")));
